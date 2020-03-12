@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     ApplicationTypeName="LAB.DataScanner.SimpleDataPersister"
+                     ApplicationTypeVersion="1.0.0"
+                     xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="Application_Name" DefaultValue=""/>
+    <Parameter Name="Application_DataSchema" DefaultValue="" />
+    <Parameter Name="Application_ConnectionString" DefaultValue="" />
+
+    <Parameter Name="Binding_ReceiverQueue" DefaultValue="" />
+     
+    <Parameter Name="RmqConnectionService_UserName" DefaultValue="guest" />
+    <Parameter Name="RmqConnectionService_Password" DefaultValue="guest" />
+    <Parameter Name="RmqConnectionService_HostName" DefaultValue="localhost" />
+    <Parameter Name="RmqConnectionService_Port" DefaultValue="5672" />
+    <Parameter Name="RmqConnectionService_VirtualHost" DefaultValue="/" />
+  </Parameters>
+  <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
+       should match the Name and Version attributes of the ServiceManifest element defined in the 
+       ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="ServicePackage" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides>
+      <ConfigOverride Name="Config">
+        <Settings>
+          <Section Name="Application">
+            <Parameter Name="DataSchema" Value="[Application_DataSchema]" />
+            <Parameter Name="ConnectionString" Value="[Application_ConnectionString" />
+          </Section>
+          <Section Name="Binding">
+            <Parameter Name="Name" Value="[Application_Name]"/>
+            <Parameter Name="ReceiverQueue" Value="[Binding_ReceiverQueue]" />
+          </Section>
+          <Section Name="RmqConnectionService">
+            <Parameter Name="UserName" Value="[RmqConnectionService_UserName]" />
+            <Parameter Name="Password" Value="[RmqConnectionService_Password]" />
+            <Parameter Name="HostName" Value="[RmqConnectionService_HostName]" />
+            <Parameter Name="Port" Value="[RmqConnectionService_Port]" />
+            <Parameter Name="VirtualHost" Value="[RmqConnectionService_VirtualHost]" />
+          </Section>
+        </Settings>
+      </ConfigOverride>
+    </ConfigOverrides>
+  </ServiceManifestImport>
+  <DefaultServices>
+    <!-- The section below creates instances of service types, when an instance of this 
+         application type is created. You can also create one or more instances of service type using the 
+         ServiceFabric PowerShell module.
+         
+         The attribute ServiceTypeName below must match the name defined in the imported ServiceManifest.xml file. -->
+    <Service Name="Service" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="SimpleDataPersisterManagedServiceType" InstanceCount="1">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+  </DefaultServices>
+</ApplicationManifest>

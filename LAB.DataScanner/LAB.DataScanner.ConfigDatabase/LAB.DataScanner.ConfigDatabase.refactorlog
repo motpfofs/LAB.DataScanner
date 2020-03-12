@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="219335de-aaea-4900-8a5a-57416c811a3a" ChangeDateTime="12/24/2019 09:41:22">
+    <Property Name="ElementName" Value="[component].[ApplicationInstance].[ComponentID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[component].[ApplicationInstance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="InstanceID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ea1459aa-59d8-4050-8edb-5b42e92ee8cf" ChangeDateTime="12/24/2019 09:41:43">
+    <Property Name="ElementName" Value="[component].[ApplicationInstance].[ComponentName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[component].[ApplicationInstance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="InstanceName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="afa9a938-42b0-46dd-95d0-932bcdfd5bbe" ChangeDateTime="12/24/2019 09:45:50">
+    <Property Name="ElementName" Value="[binding].[Binding].[SenderComponentID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[binding].[Binding]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PublisherInstanceID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f3cbba55-319e-4000-ad7c-7c4d524e6867" ChangeDateTime="12/24/2019 09:46:04">
+    <Property Name="ElementName" Value="[binding].[Binding].[ReceiverComponentID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[binding].[Binding]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ConsumerInstanceID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="71d4a98b-ef89-4192-af08-d9ea72ee7d0d" ChangeDateTime="12/24/2019 10:10:25">
+    <Property Name="ElementName" Value="[component].[ApplicationInstance].[ComponentVersion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[component].[ApplicationInstance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="InstanceVersion" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b955f375-1a83-42bb-9072-210d89eb2cfd" ChangeDateTime="12/24/2019 11:28:02">
+    <Property Name="ElementName" Value="[component].[ApplicationInstance].[TypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[component].[ApplicationInstance]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TypeID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6f5636d0-8b8e-4df6-91c4-325529b05831" ChangeDateTime="12/24/2019 11:28:16">
+    <Property Name="ElementName" Value="[meta].[ApplicationType].[TypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[meta].[ApplicationType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TypeID" />
+  </Operation>
+</Operations>
